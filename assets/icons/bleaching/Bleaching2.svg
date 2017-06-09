@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>Bleaching2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.0002 139.196 158.348 139.196 158.348 0.0002 0.0002 0.0002"></polygon>
+    </defs>
+    <g id="Bleaching" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Bleaching2">
+            <g id="Page-1" transform="translate(20.000000, 30.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M96.9847,123.7292 L117.0977,88.8922 L137.2107,123.7292 L96.9847,123.7292 Z M59.0557,123.7292 L98.1337,56.0452 L108.1687,73.4262 L79.1257,123.7292 L59.0557,123.7292 Z M21.1277,123.7292 L79.1697,23.1992 L89.2037,40.5802 L41.1977,123.7292 L21.1277,123.7292 Z M157.1097,127.2612 L85.8657,3.8662 C84.4847,1.4722 81.9327,0.0002 79.1697,0.0002 C76.4067,0.0002 73.8537,1.4722 72.4717,3.8662 L1.0367,127.5952 C-0.3453,129.9882 -0.3453,132.9362 1.0367,135.3292 C2.4177,137.7212 4.9697,139.1962 7.7337,139.1962 L150.6147,139.1962 C154.8857,139.1962 158.3487,135.7332 158.3487,131.4622 C158.3487,129.9142 157.8927,128.4712 157.1097,127.2612 L157.1097,127.2612 Z" id="Fill-1" fill="#221F20" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

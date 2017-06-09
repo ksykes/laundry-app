@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>Drying12</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 144.352 144.351 144.352 144.351 0 0 0"></polygon>
+    </defs>
+    <g id="Drying" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Drying12">
+            <g id="Page-1" transform="translate(28.000000, 28.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M128.8857,128.8862 L15.4667,128.8862 L15.4667,119.1982 L119.1997,15.4652 L128.8857,15.4652 L128.8857,128.8862 Z M15.4667,67.6452 L67.6457,15.4652 L97.3267,15.4652 L15.4667,97.3252 L15.4667,67.6452 Z M15.4667,15.4652 L45.7737,15.4652 L15.4667,45.7732 L15.4667,15.4652 Z M136.6187,-0.0008 L7.7337,-0.0008 C3.4617,-0.0008 -0.0003,3.4612 -0.0003,7.7332 L-0.0003,136.6182 C-0.0003,140.8892 3.4617,144.3522 7.7337,144.3522 L136.6187,144.3522 C140.8897,144.3522 144.3517,140.8892 144.3517,136.6182 L144.3517,7.7332 C144.3517,3.4612 140.8897,-0.0008 136.6187,-0.0008 L136.6187,-0.0008 Z" id="Fill-1" fill="#221F20" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
