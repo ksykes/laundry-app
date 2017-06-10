@@ -1,0 +1,18 @@
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: space-between;
+	.galleryItem {
+		width: 20%;
+		height: 20%;
+		border: 1px solid rebeccapurple;
+		// margin: 0.5rem;
+		&:hover {
+			cursor: pointer;
+		}
+		img {
+			width: 100%;
+		}
+	}
+}
