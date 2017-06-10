@@ -1,13 +1,16 @@
 .gallery {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	// justify-content: space-between;
+	justify-content: center;
 	align-content: space-between;
 	.galleryItem {
-		width: 20%;
-		height: 20%;
-		border: 1px solid rebeccapurple;
-		// margin: 0.5rem;
+		max-width: 150px;
+		// height: 20%;
+		border: 3px solid $red;
+		background-color: $white;
+		margin: 0.5rem;
+		padding: 0.25rem;
 		&:hover {
 			cursor: pointer;
 		}

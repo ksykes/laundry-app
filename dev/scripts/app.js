@@ -16,22 +16,9 @@ firebase.initializeApp(config);
 const auth = firebase.auth();
 const dbRef = firebase.database().ref('/');
 var laundryIcons = {};
+var nearbyLaundry = [];
 
 const googleMapsKey = 'AIzaSyDcyjwPm5OjBxyMNY9W3UJkJCpmfOMGJk0';
-
-// class Map extends React.Component {
-// 	initMap() {
-//         var uluru = {lat: -25.363, lng: 131.044};
-//         var map = new google.maps.Map(document.getElementById('map'), {
-//           zoom: 4,
-//           center: uluru
-//         });
-//         var marker = new google.maps.Marker({
-//           position: uluru,
-//           map: map
-//         });
-//       }
-// }
 
 class App extends React.Component {
 	constructor() {
@@ -47,10 +34,8 @@ class App extends React.Component {
 	componentDidMount() {
 		dbRef.on('value', (snapshot) => {
 			laundryIcons = snapshot.val().icons;
-			// console.log(laundryIcons);
 			var icons = [];
 			for (var prop in laundryIcons) {
-				// console.log(laundryIcons[prop].URL);
 				icons.push(laundryIcons[prop]);
 			}
 			this.setState ({
@@ -59,7 +44,6 @@ class App extends React.Component {
 		});
 	}
 	storeIcon(icon) {
-		// console.log(icon);
 		this.setState ({
 			clickedIconURL: icon.URL,
 			clickedIconDescription: icon.description
@@ -71,7 +55,8 @@ class App extends React.Component {
 				type: 'info',
 				confirmButtonText: 'OK',
 				allowEscapeKey: true,
-				allowOutsideClick: true
+				allowOutsideClick: true,
+				confirmButtonColor: '#e71d36'
 			});
 		});
 	}
@@ -96,20 +81,32 @@ class App extends React.Component {
 					}
 				}
 			}).then(res => {
-				console.log(res);
+				var nearbyLaundry = res.results;
+				console.log(nearbyLaundry);
 			})
 		}
 		function error() {
 			prompt('Please try again later.');
 		}
-		// navigator.geolocation.getCurrentPosition((position) => {
-		// 	console.log(position);
-		// }, () => {
+	}
+	initMap(latitude, longitude) {
+		// var cityLocationA = {lat: 79.3832, lng: 43.6532};
+		// var cityLocationB = {lat: 79.3370, lng: 43.8561};
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 4,
+			// center: this.state.geolocation,
+			center: {lat: 43.647797999999995, lng: -79.3965302}
+			// styles: googleMapStyle
+		});
+		// var markerA = new google.maps.Marker({
+		// 	position: cityLocationA,
+		// 	map: map
+		// });
+		// var markerB = new google.maps.Marker({
+		// 	position: cityLocationB,
+		// 	map: map
 		// });
 	}
-	// searchLaundromats() {
-	//
-	// }
 	render() {
 		return (
 			<div>
