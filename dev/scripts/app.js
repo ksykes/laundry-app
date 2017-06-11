@@ -20,6 +20,26 @@ var nearbyLaundry = [];
 
 const googleMapsKey = 'AIzaSyDcyjwPm5OjBxyMNY9W3UJkJCpmfOMGJk0';
 
+function initMap() {
+	var cityLocationA = {lat: 79.3832, lng: 43.6532};
+	var cityLocationB = {lat: 79.3370, lng: 43.8561};
+	console.log('this worked');
+	var map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 4,
+		// center: this.state.geolocation,
+		center: {lat: 43.647797999999995, lng: -79.3965302}
+		// styles: googleMapStyle
+	});
+	var markerA = new google.maps.Marker({
+		position: cityLocationA,
+		map: map
+	});
+	var markerB = new google.maps.Marker({
+		position: cityLocationB,
+		map: map
+	});
+}
+
 class App extends React.Component {
 	constructor() {
 		super();
@@ -89,24 +109,7 @@ class App extends React.Component {
 			prompt('Please try again later.');
 		}
 	}
-	initMap(latitude, longitude) {
-		// var cityLocationA = {lat: 79.3832, lng: 43.6532};
-		// var cityLocationB = {lat: 79.3370, lng: 43.8561};
-		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 4,
-			// center: this.state.geolocation,
-			center: {lat: 43.647797999999995, lng: -79.3965302}
-			// styles: googleMapStyle
-		});
-		// var markerA = new google.maps.Marker({
-		// 	position: cityLocationA,
-		// 	map: map
-		// });
-		// var markerB = new google.maps.Marker({
-		// 	position: cityLocationB,
-		// 	map: map
-		// });
-	}
+// old spot for init map
 	render() {
 		return (
 			<div>
@@ -119,8 +122,10 @@ class App extends React.Component {
 						</div>
 					})}
 				</div>
+				{/* <h3>If you're new to laundry, here's a step-by-step.</h3>
+				<h3>Need more help? Check out some answers to the most common laundry problems.</h3> */}
 				<button onClick={this.getLocation}>Find your closest laundromat</button>
-				{/* <Map /> */}
+				{initMap()}
 			</div>
 		)
 	}

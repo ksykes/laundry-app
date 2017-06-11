@@ -26,7 +26,6 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "google-map-react": "^0.24.0",
-    "lodash": "^4.17.4"
+    "react-google-maps": "^6.3.0"
   }
 }
