@@ -12,11 +12,17 @@ button {
 
 .markerFlag {
 	background: rebeccapurple;
-	border: 2px solid yellow;
+	border-radius: 50%;
 	box-shadow: 0 0 3px darkgrey;
-	position: absolute;
-	width: 40;
-	height: 40;
-	left: -40 / 2;
-	top: -40 / 2;
+	position: relative;
+	width: 20px;
+	height: 20px;
+	display: block;
+	cursor: pointer;
+	.displayLaundromatName {
+		background: yellow;
+	}
+	&:hover .displayLaundromatName {
+		display: block;
+	}
 }

@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+	BrowserRouter as Router,
+	Route, Link} from 'react-router-dom';
 import {ajax} from 'jquery';
-import { withGoogleMap, GoogleMap, Marker } from "react-google-maps";
 
 import Map from './map.js';
 
@@ -37,6 +39,7 @@ class App extends React.Component {
 		}
 		this.storeIcon = this.storeIcon.bind(this);
 		this.getLocation = this.getLocation.bind(this);
+		// this.handleMapLoad = this.handleMapLoad.bind(this);
 	}
 	componentDidMount() {
 		// display laundry icons from Firebase
@@ -114,30 +117,56 @@ class App extends React.Component {
 	}
 	render() {
 		return (
+			<Router>
+				<div>
+					<h1>The Laundry Attendant</h1>
+					<h3>Click on an icon below to deciper your laundry instructions.</h3>
+					{/* MixItUp filter buttons */}
+					<button type="button" data-filter="all">All</button>
+					<button type="button" data-filter=".bleaching">Bleaching</button>
+					<button type="button" data-filter=".washing">Washing</button>
+					<button type="button" data-filter=".drying">Drying</button>
+					<button type="button" data-filter=".ironing">Ironing</button>
+					<button type="button" data-filter=".professional">Dry Cleaning</button>
+					{/* display gallery images */}
+					<div id="gallery">
+						{this.state.iconArray.map((icon) => {
+							return <div className={'galleryItem mix ' + icon.category} key={this.state.iconArray.indexOf(icon)} onClick={() => this.storeIcon(icon)}>
+								<img src={`${icon.URL}`} />
+							</div>
+						})}
+					</div>
+					{/* <h3>If you're new to doing your own laundry, here's a step-by-step.</h3>
+					<h3>Need more help? Check out some answers to the most common laundry problems.</h3> */}
+					<Route path='/tips' component={LaundrySteps} />
+					<Route path='/problems' component={LaundryFAQ} />
+					<Link to='/tips'>Laundry Tips</Link>
+					<Link to='/problems'>Common Laundry Problems</Link>
+					<button onClick={this.getLocation}>Find your closest laundromat</button>
+					<div id='map' ref='map'>
+						<Map lat={this.state.geolocationLat} lng={this.state.geolocationLng}  data={this.state.data}/>
+					</div>
+				</div>
+			</Router>
+		)
+	}
+}
+
+class LaundryFAQ extends React.Component {
+	render() {
+		return (
 			<div>
-				<h1>The Laundry Attendant</h1>
-				<h3>Click on an icon below to deciper your laundry instructions.</h3>
-				{/* MixItUp filter buttons */}
-				<button type="button" data-filter="all">All</button>
-				<button type="button" data-filter=".bleaching">Bleaching</button>
-				<button type="button" data-filter=".washing">Washing</button>
-				<button type="button" data-filter=".drying">Drying</button>
-				<button type="button" data-filter=".ironing">Ironing</button>
-				<button type="button" data-filter=".professional">Dry Cleaning</button>
-				{/* display gallery images */}
-				<div id="gallery">
-					{this.state.iconArray.map((icon) => {
-						return <div className={'galleryItem mix ' + icon.category} key={this.state.iconArray.indexOf(icon)} onClick={() => this.storeIcon(icon)}>
-							<img src={`${icon.URL}`} />
-						</div>
-					})}
-				</div>
-				{/* <h3>If you're new to doing your own laundry, here's a step-by-step.</h3>
-				<h3>Need more help? Check out some answers to the most common laundry problems.</h3> */}
-				<button onClick={this.getLocation}>Find your closest laundromat</button>
-				<div id='map'>
-					<Map ref='map' lat={this.state.geolocationLat} lng={this.state.geolocationLng}  data={this.state.data}/>
-				</div>
+				<h1>Most Common Laundry Problems</h1>
+			</div>
+		)
+	}
+}
+
+class LaundrySteps extends React.Component {
+	render() {
+		return (
+			<div>
+				<h1>Laundry Step-by-Step</h1>
 			</div>
 		)
 	}

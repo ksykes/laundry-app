@@ -9,6 +9,17 @@ export default class SimpleMap extends Component {
   //   zoom: 11
 	constructor() {
 		super();
+		this.state = {
+			currentZoom: 13,
+			center: {lat:43.6532, lng:-79.3832}
+		}
+	}
+	hoverMapItem() {
+		var hoverItem = document.getElementsByClassName('markerFlag');
+		// this handler will be executed only once when the cursor moves over the unordered list
+		markerFlag.addEventListener("mouseenter", (event) => {
+			markerFlag.className += " displayLaundromatName";
+		});
 	}
 	render() {
 		var latitude = this.props.lat;
@@ -17,22 +28,29 @@ export default class SimpleMap extends Component {
 		console.log(data);
 		return (
 			<GoogleMapReact
-				defaultCenter={{lat: latitude,lng: longitude}}
-				defaultZoom={4}
-				apiKey={'AIzaSyDcyjwPm5OjBxyMNY9W3UJkJCpmfOMGJk0'}
+				// defaultCenter={{lat: latitude,lng: longitude}}
+				defaultCenter={this.state.center}
+				defaultZoom={this.state.currentZoom}
+				// apiKey={'AIzaSyDcyjwPm5OjBxyMNY9W3UJkJCpmfOMGJk0'}
 				>
-					<div className='markerInfo'>
+					{/* <div className='markerInfo'> */}
 						{data.map((laundromatData) => {
 							return (
-								<div>
-									<AnyReactComponent lat={laundromatData.geometry.location.lat} lng={laundromatData.geometry.location.lng} text={laundromatData.name} key={laundromatData.id} />
-									{console.log(laundromatData.geometry)}
-									{console.log(laundromatData.geometry.location.lat)}
-									{console.log(laundromatData.geometry.location.lng)}
-								</div>
+								// <div>
+									<AnyReactComponent
+										lat={laundromatData.geometry.location.lat}
+										lng={laundromatData.geometry.location.lng}
+										// text={laundromatData.name}
+										text={' '}
+										key={laundromatData.id} />
+
+									// {console.log(laundromatData.geometry)}
+									// {console.log(laundromatData.geometry.location.lat)}
+									// {console.log(laundromatData.geometry.location.lng)}
+								// </div>
 							)
 						})}
-					</div>
+					{/* </div> */}
 			</GoogleMapReact>
 		);
 	}
