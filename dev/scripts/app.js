@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {ajax} from 'jquery';
+import { withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+
+import Map from './map.js';
 
 // Initialize Firebase
 var config = {
@@ -20,38 +23,23 @@ var nearbyLaundry = [];
 
 const googleMapsKey = 'AIzaSyDcyjwPm5OjBxyMNY9W3UJkJCpmfOMGJk0';
 
-function initMap() {
-	var cityLocationA = {lat: 79.3832, lng: 43.6532};
-	var cityLocationB = {lat: 79.3370, lng: 43.8561};
-	console.log('this worked');
-	var map = new google.maps.Map(document.getElementById('map'), {
-		zoom: 4,
-		// center: this.state.geolocation,
-		center: {lat: 43.647797999999995, lng: -79.3965302}
-		// styles: googleMapStyle
-	});
-	var markerA = new google.maps.Marker({
-		position: cityLocationA,
-		map: map
-	});
-	var markerB = new google.maps.Marker({
-		position: cityLocationB,
-		map: map
-	});
-}
-
 class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {
 			clickedIconURL: null,
 			clickedIconDescription: null,
+			clickedIconCategory: null,
 			iconArray: [],
-			geolocation: {}
+			geolocationLat: 43.6532,
+			geolocationLng: -79.3832,
+			data: []
 		}
 		this.storeIcon = this.storeIcon.bind(this);
+		this.getLocation = this.getLocation.bind(this);
 	}
 	componentDidMount() {
+		// display laundry icons from Firebase
 		dbRef.on('value', (snapshot) => {
 			laundryIcons = snapshot.val().icons;
 			var icons = [];
@@ -62,12 +50,20 @@ class App extends React.Component {
 				iconArray: icons
 			})
 		});
+		// initiate MixItUp plugin
+		function initiateMixItUp() {
+			console.log('mixitup is working');
+			document.getElementById('gallery').mixItUp();
+		}
 	}
 	storeIcon(icon) {
+		// store selected item info in state
 		this.setState ({
 			clickedIconURL: icon.URL,
-			clickedIconDescription: icon.description
+			clickedIconDescription: icon.description,
+			clickedIconCategory: icon.category
 		}, () => {
+			// display selected item info in modal
 			swal({
 				title: 'Instructions:',
 				text: this.state.clickedIconDescription,
@@ -81,8 +77,8 @@ class App extends React.Component {
 		});
 	}
 	getLocation() {
-		navigator.geolocation.getCurrentPosition(success, error);
-		function success(position) {
+		// if successful store coordinates as latitude and longitude
+		var success = (position) => {
 			var latitude = position.coords.latitude;
 			var longitude = position.coords.longitude;
 			console.log('thing');
@@ -101,31 +97,47 @@ class App extends React.Component {
 					}
 				}
 			}).then(res => {
+				// store nearby laundromats
 				var nearbyLaundry = res.results;
-				console.log(nearbyLaundry);
+				// exporting data to map.js
+				this.setState({
+					data: nearbyLaundry
+				});
 			})
 		}
 		function error() {
-			prompt('Please try again later.');
+			// if geolocation is unsuccessful display error message
+			prompt('Your browser doesn\'t support geolocation.');
 		}
+		// get geolocation of user
+		navigator.geolocation.getCurrentPosition(success, error);
 	}
-// old spot for init map
 	render() {
 		return (
 			<div>
 				<h1>The Laundry Attendant</h1>
 				<h3>Click on an icon below to deciper your laundry instructions.</h3>
-				<div className="gallery">
+				{/* MixItUp filter buttons */}
+				<button type="button" data-filter="all">All</button>
+				<button type="button" data-filter=".bleaching">Bleaching</button>
+				<button type="button" data-filter=".washing">Washing</button>
+				<button type="button" data-filter=".drying">Drying</button>
+				<button type="button" data-filter=".ironing">Ironing</button>
+				<button type="button" data-filter=".professional">Dry Cleaning</button>
+				{/* display gallery images */}
+				<div id="gallery">
 					{this.state.iconArray.map((icon) => {
-						return <div className="galleryItem" key={this.state.iconArray.indexOf(icon)} onClick={() => this.storeIcon(icon)}>
+						return <div className={'galleryItem mix ' + icon.category} key={this.state.iconArray.indexOf(icon)} onClick={() => this.storeIcon(icon)}>
 							<img src={`${icon.URL}`} />
 						</div>
 					})}
 				</div>
-				{/* <h3>If you're new to laundry, here's a step-by-step.</h3>
+				{/* <h3>If you're new to doing your own laundry, here's a step-by-step.</h3>
 				<h3>Need more help? Check out some answers to the most common laundry problems.</h3> */}
 				<button onClick={this.getLocation}>Find your closest laundromat</button>
-				{initMap()}
+				<div id='map'>
+					<Map ref='map' lat={this.state.geolocationLat} lng={this.state.geolocationLng}  data={this.state.data}/>
+				</div>
 			</div>
 		)
 	}
