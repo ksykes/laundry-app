@@ -71,7 +71,6 @@ class Gallery extends React.Component {
 		}
 		this.storeIcon = this.storeIcon.bind(this);
 		this.getLocation = this.getLocation.bind(this);
-		// this.handleMapLoad = this.handleMapLoad.bind(this);
 	}
 	componentDidMount() {
 		// display laundry icons from Firebase
@@ -83,15 +82,13 @@ class Gallery extends React.Component {
 			}
 			this.setState ({
 				iconArray: icons
-			})
+			}, () => {
+				var startMixing = function initiateMixItUp() {
+					var mixer = mixitup('#gallery');
+				};
+				startMixing();
+			});
 		});
-	}
-	initiateMixItUp() {
-		// initiate MixItUp plugin
-		function initiateMixItUp() {
-			console.log('mixitup is working');
-			document.getElementById('#gallery').mixItUp();
-		}
 	}
 	storeIcon(icon) {
 		// store selected item info in state
@@ -253,7 +250,7 @@ class Footer extends React.Component {
 		return (
 			<footer>
 				<div className='wrapper'>
-					<p>Made possible by the fine work of the <a href='https://developers.google.com/maps/documentation/javascript/'>Google Maps API</a>, <a href='https://github.com/istarkov/google-map-react'>Ivan Starkov</a>, and the <a href='https://thenounproject.com/'>Noun Project</a>.</p>
+					<p>Made possible by the fine work of the <a href='https://developers.google.com/maps/documentation/javascript/'>Google Maps API</a>, <a href='https://github.com/istarkov/google-map-react'>Ivan Starkov</a>, <a href='https://www.kunkalabs.com/mixitup/'>MixItUp</a>and the <a href='https://thenounproject.com/'>Noun Project</a>.</p>
 					<p>Thanks to <a href='http://lifehacker.com/does-it-matter-what-laundry-detergent-i-use-1121827834'>Lifehacker</a>, <a href='http://www.whowhatwear.com/are-you-doing-laundry-right-weve-got-the-dos-and-donts/'>Who What Wear</a>, <a href='http://www.artofmanliness.com/2012/08/02/heading-out-on-your-own-day-2-how-to-do-laundry/'>The Art of Manliness</a>, and my mama for the laundry advice.</p>
 					<p>Developed and designed by <a href='http://kaitsykes.com'>Kait Sykes</a>. Copyright © 2017. All Rights Reserved.</p>
 				</div>
