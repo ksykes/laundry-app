@@ -10,7 +10,7 @@ export default class SimpleMap extends Component {
 	constructor() {
 		super();
 		this.state = {
-			currentZoom: 13,
+			currentZoom: 14,
 			center: {lat:43.6532, lng:-79.3832}
 		}
 	}
@@ -25,13 +25,15 @@ export default class SimpleMap extends Component {
 		var latitude = this.props.lat;
 		var longitude = this.props.lng;
 		var data = this.props.data;
-		console.log(data);
+		// console.log(data);
 		return (
 			<GoogleMapReact
 				// defaultCenter={{lat: latitude,lng: longitude}}
 				defaultCenter={this.state.center}
 				defaultZoom={this.state.currentZoom}
-				// apiKey={'AIzaSyDcyjwPm5OjBxyMNY9W3UJkJCpmfOMGJk0'}
+				bootstrapURLKeys={{
+					key: 'AIzaSyDcyjwPm5OjBxyMNY9W3UJkJCpmfOMGJk0'
+				}}
 				>
 					{/* <div className='markerInfo'> */}
 						{data.map((laundromatData) => {

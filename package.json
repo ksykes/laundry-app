@@ -27,8 +27,5 @@
     "react-router-dom": "^4.1.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
-  },
-  "dependencies": {
-    "react-google-maps": "^6.3.0"
   }
 }

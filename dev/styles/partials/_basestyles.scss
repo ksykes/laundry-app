@@ -11,3 +11,53 @@ body {
 	max-width: 1080px;
 	margin: 0 auto;
 }
+
+header {
+	.homeLink {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+		padding-top: 1rem;
+		text-decoration: none;
+	}
+	nav {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		background: $aqua;
+		padding: 1rem;
+		a {
+			padding: 1rem;
+			width: 50%;
+			margin: 0;
+		}
+	}
+}
+
+.logo {
+	max-width: 5rem;
+	margin: 0 auto;
+	text-align: center;
+}
+
+button {
+	color: $white;
+	background-color: $red;
+	border: none;
+}
+
+footer {
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	margin-top: 2rem;
+	background: $aqua;
+	padding: 1rem;
+	p {
+		width: 30%;
+		padding: 1rem;
+		margin: 0;
+		display: inline-block;
+	}
+}

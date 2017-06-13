@@ -1,6 +1,14 @@
+a {
+	color: $red;
+	text-decoration: none;
+	&:hover {
+		color: $white;
+	}
+}
+
 h1 {
 	color: $white;
-	font-family: 'Overpass', sans-serif;
+	font-family: 'Short Stack', sans-serif;
 	text-align: center;
 	text-transform: uppercase;
 	font-size: 2rem;
@@ -13,8 +21,30 @@ h3 {
 	font-size: 1.5rem;
 }
 
+nav a {
+	font-family: 'Didact Gothic', sans-serif;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	display: inline;
+	text-align: center;
+}
+
 button {
 	font-size: 1.25rem;
 	text-transform: uppercase;
-	font-family: 'Overpass', sans-serif;
+	font-family: 'Short Stack', sans-serif;
+}
+
+.laundrySteps ol {
+	color: $white;
+	font-family: 'Didact Gothic', sans-serif;
+	font-size: 1rem;
+}
+
+footer {
+	color: $white;
+	font-family: 'Didact Gothic', sans-serif;
+	text-align: center;
+	font-size: 1rem;
 }
