@@ -168,7 +168,12 @@ class Gallery extends React.Component {
 		let loadMap;
 		if (this.state.loaderOn) {
 			loadMap = (
-				<button>loader is on</button>
+				// <button>loader is on</button>
+				<button className="spinner">
+					<div className="bounce1"></div>
+					<div className="bounce2"></div>
+					<div className="bounce3"></div>
+				</button>
 			)
 		} else {
 			loadMap = (
