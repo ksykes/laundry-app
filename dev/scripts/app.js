@@ -37,17 +37,22 @@ class App extends React.Component {
 						</a>
 						<nav>
 							<div className='wrapper'>
-								<Link to='/tips'>Laundry Tips</Link>
+								<Link to='/tips'>Laundry Step-by-Step</Link>
 								<Link to='/problems'>Common Laundry Problems</Link>
 							</div>
 						</nav>
 					</header>
-					{/* React Router set up */}
-					<Route path='/tips' component={LaundrySteps} />
-					<Route path='/problems' component={LaundryFAQ} />
 
 					<div className='wrapper'>
-						<Gallery />
+						<Route path='/tips' component={LaundrySteps} />
+					</div>
+
+					<div className='wrapper'>
+						<Route path='/problems' component={LaundryFAQ} />
+					</div>
+
+					<div className='wrapper'>
+						<Route exact path='/' component={Gallery} />
 					</div>
 
 					<Footer />
@@ -67,7 +72,8 @@ class Gallery extends React.Component {
 			iconArray: [],
 			geolocationLat: 43.6532,
 			geolocationLng: -79.3832,
-			data: []
+			data: [],
+			loaderOn: false
 		}
 		this.storeIcon = this.storeIcon.bind(this);
 		this.getLocation = this.getLocation.bind(this);
@@ -83,11 +89,11 @@ class Gallery extends React.Component {
 			this.setState ({
 				iconArray: icons
 			}, () => {
-				var startMixing = function initiateMixItUp() {
+				// var startMixing = function initiateMixItUp() {
 					var mixer = mixitup('#gallery');
-				};
-				startMixing();
-			});
+				}
+				// startMixing();
+			);
 		});
 	}
 	storeIcon(icon) {
@@ -112,11 +118,13 @@ class Gallery extends React.Component {
 	}
 	getLocation() {
 		// if successful store coordinates as latitude and longitude
+		this.setState ({
+			loaderOn: !this.state.loaderOn
+		})
 		var success = (position) => {
 			var latitude = position.coords.latitude;
 			var longitude = position.coords.longitude;
-			console.log('thing');
-			console.log(position);
+			// console.log(position);
 			ajax({
 				url: 'https://proxy.hackeryou.com',
 				method: 'GET',
@@ -133,9 +141,13 @@ class Gallery extends React.Component {
 			}).then(res => {
 				// store nearby laundromats
 				var nearbyLaundry = res.results;
+				console.log(nearbyLaundry);
 				// exporting data to map.js
 				this.setState({
-					data: nearbyLaundry
+					data: nearbyLaundry,
+					loaderOn: !this.state.loaderOn
+					// geolocationLat: nearbyLaundry[0].geometry.location.lat,
+					// geolocationLng: nearbyLaundry[0].geometry.location.lng
 				});
 				// // add displayNone class to button
 				var addClass = document.getElementById('geoButton');
@@ -153,16 +165,29 @@ class Gallery extends React.Component {
 		navigator.geolocation.getCurrentPosition(success, error);
 	}
 	render() {
+		let loadMap;
+		if (this.state.loaderOn) {
+			loadMap = (
+				<button>loader is on</button>
+			)
+		} else {
+			loadMap = (
+				<button onClick={this.getLocation} id='geoButton'>Find your closest laundromat</button>
+			)
+		}
 		return (
 			<div className='gallery'>
 				<h3>Click on an icon below to decipher your clothing's laundry tag.</h3>
 				{/* MixItUp filter buttons */}
-				<button type="button" data-filter="all">All</button>
-				<button type="button" data-filter=".bleaching">Bleaching</button>
-				<button type="button" data-filter=".washing">Washing</button>
-				<button type="button" data-filter=".drying">Drying</button>
-				<button type="button" data-filter=".ironing">Ironing</button>
-				<button type="button" data-filter=".professional">Dry Cleaning</button>
+				<div className='filterButtons'>
+					<h4>Filter:</h4>
+					<button type="button" data-filter="all">All</button>
+					<button type="button" data-filter=".bleaching">Bleaching</button>
+					<button type="button" data-filter=".washing">Washing</button>
+					<button type="button" data-filter=".drying">Drying</button>
+					<button type="button" data-filter=".ironing">Ironing</button>
+					<button type="button" data-filter=".professional">Dry Cleaning</button>
+				</div>
 				{/* display gallery images */}
 				<div id="gallery">
 					{this.state.iconArray.map((icon) => {
@@ -172,7 +197,8 @@ class Gallery extends React.Component {
 					})}
 				</div>
 				<div id='map' ref='map'>
-					<button onClick={this.getLocation} id='geoButton'>Find your closest laundromat</button>
+					{loadMap}
+
 					<div id='overlay'></div>
 					<Map lat={this.state.geolocationLat} lng={this.state.geolocationLng}  data={this.state.data}/>
 				</div>
@@ -194,6 +220,8 @@ class LaundryFAQ extends React.Component {
 					<p>This is most common among synthetic fabrics. Try turning synthetic clothing inside out before washing. (Pilling is caused by abrasion of fibers, and this cuts down on abrasion during the wash and dry cycles.) You can also wash your synthetics together in a gentler, shorter cycle. Using a liquid detergent will help. To remove pills, snip them off with a battery-powered pill remover (available at sewing stores and discount retailers) or pull the fabric tight over a curved surface and carefully shave the pills off with a safety razor.</p>
 					<h4>There’s a lot of lint on your clothes.</h4>
 					<p>You probably need to sort better. Separate lint producers, such as fleece sweat suits, chenille items, new terry cloth towels, and flannel pajamas, from lint attractors, such as corduroys, synthetic blends, and dark fabric. To remove the lint, use a lint roller or pat with the sticky side of masking or packing tape. Check to make sure pockets are empty of tissues and other paper before you wash. Make sure the washer and dryer lint filters are clean.</p>
+					<h4>You have sweat stains on your white T-shirts.</h4>
+					<p>Many antiperspirants contain aluminum chloride, which reacts with sweat and discolours light fabrics. None are foolproof, but there are a few ways to get rid of these unsightly yellow stains. Turn the shirt inside out and rinse in cold water. For old stains, sponge with white vinegar, let it set for at least thirty minutes, and launder in the hottest water recommended for the fabric. Don't use the dryer, which will set the stain. For new stains, try rubbing with ammonia (1 tablespoon to 1/2 cup water) before washing. If that doesn't work, try Clorox—but not together with ammonia, unless you want to pass out on your laundry room floor.</p>
 				</div>
 			</div>
 		)
@@ -250,7 +278,7 @@ class Footer extends React.Component {
 		return (
 			<footer>
 				<div className='wrapper'>
-					<p>Made possible by the fine work of the <a href='https://developers.google.com/maps/documentation/javascript/'>Google Maps API</a>, <a href='https://github.com/istarkov/google-map-react'>Ivan Starkov</a>, <a href='https://www.kunkalabs.com/mixitup/'>MixItUp</a>and the <a href='https://thenounproject.com/'>Noun Project</a>.</p>
+					<p>Made possible by the <a href='https://developers.google.com/maps/documentation/javascript/'>Google Maps API</a>, <a href='https://github.com/istarkov/google-map-react'>Ivan Starkov</a>, <a href='https://www.kunkalabs.com/mixitup/'>MixItUp</a>, and the <a href='https://thenounproject.com/'>Noun Project</a>.</p>
 					<p>Thanks to <a href='http://lifehacker.com/does-it-matter-what-laundry-detergent-i-use-1121827834'>Lifehacker</a>, <a href='http://www.whowhatwear.com/are-you-doing-laundry-right-weve-got-the-dos-and-donts/'>Who What Wear</a>, <a href='http://www.artofmanliness.com/2012/08/02/heading-out-on-your-own-day-2-how-to-do-laundry/'>The Art of Manliness</a>, and my mama for the laundry advice.</p>
 					<p>Developed and designed by <a href='http://kaitsykes.com'>Kait Sykes</a>. Copyright © 2017. All Rights Reserved.</p>
 				</div>

@@ -1,20 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
-    <title>Professional2</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <polygon id="path-1" points="0.0004 128.887 128.8844 128.887 128.8844 0.0002 0.0004 0.0002"></polygon>
-    </defs>
-    <g id="Professional" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Professional2">
-            <g id="Page-1" transform="translate(36.000000, 36.000000)">
-                <mask id="mask-2" fill="white">
-                    <use xlink:href="#path-1"></use>
-                </mask>
-                <g id="Clip-2"></g>
-                <path d="M64.4424,113.4212 C37.4374,113.4212 15.4654,91.4492 15.4654,64.4432 C15.4654,37.4382 37.4374,15.4672 64.4424,15.4672 C91.4494,15.4672 113.4204,37.4382 113.4204,64.4432 C113.4204,91.4492 91.4494,113.4212 64.4424,113.4212 L64.4424,113.4212 Z M64.4424,0.0002 C28.9094,0.0002 0.0004,28.9102 0.0004,64.4432 C0.0004,99.9782 28.9094,128.8872 64.4424,128.8872 C99.9764,128.8872 128.8844,99.9782 128.8844,64.4432 C128.8844,28.9102 99.9764,0.0002 64.4424,0.0002 L64.4424,0.0002 Z M52.2864,85.7612 L61.6894,85.7612 L61.6894,68.9962 L76.6604,68.9962 L76.6604,61.3252 L61.6894,61.3252 L61.6894,51.7982 L77.7124,51.7982 L77.7124,44.0662 L52.2864,44.0662 L52.2864,85.7612 Z" id="Fill-1" fill="#221F20" mask="url(#mask-2)"></path>
-            </g>
-        </g>
-    </g>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>
+    Professional2
+  </title>
+  <defs>
+    <path id="a" d="M0 129h129V0H0z"/>
+  </defs>
+  <g transform="translate(36 36)" fill="none" fill-rule="evenodd">
+    <mask id="b" fill="#fff">
+      <use xlink:href="#a"/>
+    </mask>
+    <path d="M64.4 113.4c-27 0-49-22-49-49s22-49 49-49 49 22 49 49-22 49-49 49zM64.4 0C29 0 0 29 0 64.4 0 100 29 129 64.4 129c35.6 0 64.5-29 64.5-64.6C129 29 100 0 64.2 0zm-12 85.8h9.3V69h15v-7.7h-15v-9.5h16V44H52.3v42z" fill="#221F20" mask="url(#b)"/>
+  </g>
 </svg>

@@ -21,6 +21,18 @@ h3 {
 	font-size: 1.5rem;
 }
 
+h4 {
+	color: $red;
+	font-family: 'Didact Gothic', sans-serif;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+}
+
+.gallery h4 {
+	display: inline-block;
+	color: $white;
+}
+
 nav a {
 	font-family: 'Didact Gothic', sans-serif;
 	font-size: 1.25rem;
@@ -47,4 +59,19 @@ footer {
 	font-family: 'Didact Gothic', sans-serif;
 	text-align: center;
 	font-size: 1rem;
+}
+
+p, .laundrySteps li {
+	color: $white;
+	font-family: 'Didact Gothic', sans-serif;
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+}
+
+.laundrySteps li {
+	margin-bottom: 0.75rem;
+}
+
+.laundrySteps ul {
+	margin-top: 0.75rem;
 }

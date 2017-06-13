@@ -25,10 +25,9 @@ export default class SimpleMap extends Component {
 		var latitude = this.props.lat;
 		var longitude = this.props.lng;
 		var data = this.props.data;
-		// console.log(data);
+		console.log(data);
 		return (
 			<GoogleMapReact
-				// defaultCenter={{lat: latitude,lng: longitude}}
 				defaultCenter={this.state.center}
 				defaultZoom={this.state.currentZoom}
 				bootstrapURLKeys={{
@@ -45,12 +44,14 @@ export default class SimpleMap extends Component {
 										// text={laundromatData.name}
 										text={' '}
 										key={laundromatData.id} />
-
-									// {console.log(laundromatData.geometry)}
-									// {console.log(laundromatData.geometry.location.lat)}
-									// {console.log(laundromatData.geometry.location.lng)}
 								// </div>
-							)
+							);
+							this.setState({
+								center: {
+									lat: laundromatData[0].geometry.location.lat,
+									lng: laundromatData[0].geometry.location.lng
+								}
+							});
 						})}
 					{/* </div> */}
 			</GoogleMapReact>
