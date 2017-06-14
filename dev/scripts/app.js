@@ -70,8 +70,8 @@ class Gallery extends React.Component {
 			clickedIconDescription: null,
 			clickedIconCategory: null,
 			iconArray: [],
-			geolocationLat: 43.6532,
-			geolocationLng: -79.3832,
+			geolocationLat: 43.648458,
+			geolocationLng: -79.397816,
 			data: [],
 			loaderOn: false
 		}
@@ -138,7 +138,6 @@ class Gallery extends React.Component {
 			}).then(res => {
 				// store nearby laundromats
 				var nearbyLaundry = res.results;
-				console.log(nearbyLaundry);
 				// exporting data to map.js
 				this.setState({
 					data: nearbyLaundry,
