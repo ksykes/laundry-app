@@ -1,10 +1,5 @@
 body {
 	background: $blue;
-	// background: url('../../assets/bruno-nascimento-113628.jpg');
-	// background-size: contain;
-	// background-attachment: fixed;
-	// background-repeat: no-repeat;
-	// opacity: 50%;
 	font-size: 62.5%;
 }
 
@@ -24,15 +19,17 @@ header {
 		text-decoration: none;
 	}
 	nav {
-		display: flex;
-		justify-content: center;
-		align-content: center;
 		background: $aqua;
-		padding: 1rem;
-		a {
+		.wrapper {
+			display: flex;
+			justify-content: center;
+			align-content: center;
 			padding: 1rem;
-			width: 50%;
-			margin: 0;
+			a {
+				padding: 1rem;
+				width: 50%;
+				margin: 0;
+			}
 		}
 	}
 }
@@ -47,20 +44,25 @@ button {
 	color: $white;
 	background-color: $red;
 	border: none;
+	&:focus {
+		outline: 0;
+	}
 }
 
 footer {
-	display: flex;
-	justify-content: space-between;
-	align-content: center;
-	align-items: flex-start;
 	margin-top: 2rem;
 	background: $aqua;
-	padding: 1rem;
-	p {
-		width: 30%;
+	.wrapper 	{
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
 		padding: 1rem;
-		margin: 0;
-		display: inline-block;
+		p {
+			width: 45%;
+			padding: 1rem;
+			margin: 0;
+			display: inline-block;
+		}
 	}
 }

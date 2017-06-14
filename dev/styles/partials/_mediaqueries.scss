@@ -1,0 +1,12 @@
+/* Landscape phone to portrait tablet */
+@media (max-width: 480px) {
+	header nav .wrapper a {
+		width: 100%;
+	}
+	body {
+		background-color: yellow;
+	}
+	footer .wrapper p {
+		width: 100%;
+	}
+}

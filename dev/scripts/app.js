@@ -89,10 +89,8 @@ class Gallery extends React.Component {
 			this.setState ({
 				iconArray: icons
 			}, () => {
-				// var startMixing = function initiateMixItUp() {
 					var mixer = mixitup('#gallery');
 				}
-				// startMixing();
 			);
 		});
 	}
@@ -124,7 +122,6 @@ class Gallery extends React.Component {
 		var success = (position) => {
 			var latitude = position.coords.latitude;
 			var longitude = position.coords.longitude;
-			// console.log(position);
 			ajax({
 				url: 'https://proxy.hackeryou.com',
 				method: 'GET',
@@ -146,8 +143,6 @@ class Gallery extends React.Component {
 				this.setState({
 					data: nearbyLaundry,
 					loaderOn: !this.state.loaderOn
-					// geolocationLat: nearbyLaundry[0].geometry.location.lat,
-					// geolocationLng: nearbyLaundry[0].geometry.location.lng
 				});
 				// // add displayNone class to button
 				var addClass = document.getElementById('geoButton');
@@ -168,7 +163,6 @@ class Gallery extends React.Component {
 		let loadMap;
 		if (this.state.loaderOn) {
 			loadMap = (
-				// <button>loader is on</button>
 				<button className="spinner">
 					<div className="bounce1"></div>
 					<div className="bounce2"></div>
@@ -283,7 +277,6 @@ class Footer extends React.Component {
 		return (
 			<footer>
 				<div className='wrapper'>
-					<p>Made possible by the <a href='https://developers.google.com/maps/documentation/javascript/'>Google Maps API</a>, <a href='https://github.com/istarkov/google-map-react'>Ivan Starkov</a>, <a href='https://www.kunkalabs.com/mixitup/'>MixItUp</a>, and the <a href='https://thenounproject.com/'>Noun Project</a>.</p>
 					<p>Thanks to <a href='http://lifehacker.com/does-it-matter-what-laundry-detergent-i-use-1121827834'>Lifehacker</a>, <a href='http://www.whowhatwear.com/are-you-doing-laundry-right-weve-got-the-dos-and-donts/'>Who What Wear</a>, <a href='http://www.artofmanliness.com/2012/08/02/heading-out-on-your-own-day-2-how-to-do-laundry/'>The Art of Manliness</a>, and my mama for the laundry advice.</p>
 					<p>Developed and designed by <a href='http://kaitsykes.com'>Kait Sykes</a>. Copyright © 2017. All Rights Reserved.</p>
 				</div>

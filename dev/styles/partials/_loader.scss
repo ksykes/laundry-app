@@ -1,20 +1,21 @@
 .spinner {
-  margin: 100px auto 0;
   width: 70px;
   text-align: center;
+  display: inline-block;
+  height: 4rem;
   position: absolute;
   left: 0;
   right: 0;
   top: 6rem;
   margin: 0 auto;
   z-index: 20;
+  background: none;
 }
 
 .spinner > div {
   width: 18px;
   height: 18px;
   background-color: #333;
-
   border-radius: 100%;
   display: inline-block;
   -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
