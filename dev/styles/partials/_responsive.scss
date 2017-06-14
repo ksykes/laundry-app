@@ -1,12 +1,23 @@
 /* Landscape phone to portrait tablet */
 @media (max-width: 480px) {
-	header nav .wrapper a {
-		width: 100%;
+	header nav .wrapper {
+		display: block;
+		a {
+			width: 100%;
+			display: block;
+		}
 	}
-	body {
-		background-color: yellow;
+	#gallery .galleryItem {
+		max-width: 100px;
 	}
-	footer .wrapper p {
-		width: 100%;
+	#geoButton {
+		width: 10rem;
+	}
+	footer .wrapper {
+		display: block;
+		p {
+			display: block;
+			width: 100%;
+		}
 	}
 }
