@@ -8,7 +8,6 @@ export default class SimpleMap extends Component {
 		super();
 		this.state = {
 			currentZoom: 14,
-			center: {lat: 43.648458, lng: -79.397816}
 		}
 	}
 	// hoverMapItem() {
@@ -19,13 +18,12 @@ export default class SimpleMap extends Component {
 	// 	});
 	// }
 	render() {
-		// var latitude = this.props.lat;
-		// var longitude = this.props.lng;
+		var latitude = this.props.lat;
+		var longitude = this.props.lng;
 		var data = this.props.data;
 		return (
 			<GoogleMapReact
-				// defaultCenter={this.state.center}
-				center={this.state.center}
+				center={{lat:latitude,lng:longitude}}
 				defaultZoom={this.state.currentZoom}
 				bootstrapURLKeys={{
 					key: 'AIzaSyDcyjwPm5OjBxyMNY9W3UJkJCpmfOMGJk0'

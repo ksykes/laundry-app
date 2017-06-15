@@ -1,6 +1,16 @@
 body {
 	background: $blue;
 	font-size: 62.5%;
+	position: relative;
+}
+
+.clothesline {
+	position: absolute;
+	top: 0;
+	left: 77.25%;
+	// z-index: -5;
+	width: 20%;
+	transform: rotate(25deg);
 }
 
 .wrapper {
@@ -18,13 +28,49 @@ header {
 		padding-top: 1rem;
 		text-decoration: none;
 	}
-	nav {
-		background: $aqua;
-		.wrapper {
+}
+
+.logo {
+	max-width: 7rem;
+	margin: 0 auto;
+	text-align: center;
+}
+
+button {
+	background-color: $purple;
+	border: none;
+	&:focus {
+		outline: 0;
+	}
+}
+
+.backLinks {
+	margin: 0.25rem;
+	padding: 0.5rem;
+	border: 2px dotted $aqua;
+	background: none;
+	color: $purple;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	font-family: 'Josefin Sans', sans-serif;
+	padding-top: 0.5rem;
+	&:hover {
+		border: 2px dotted $purple;
+		color: $aqua;
+	}
+}
+
+nav {
+	background: $aqua;
+	margin-top: 2rem;
+	.wrapper {
+		padding: 1rem;
+		max-width: 60%;
+		margin: 0 auto;
+		.links {
 			display: flex;
 			justify-content: center;
 			align-content: center;
-			padding: 1rem;
 			a {
 				padding: 1rem;
 				width: 50%;
@@ -34,35 +80,19 @@ header {
 	}
 }
 
-.logo {
-	max-width: 5rem;
-	margin: 0 auto;
-	text-align: center;
-}
-
-button {
-	color: $white;
-	background-color: $red;
-	border: none;
-	&:focus {
-		outline: 0;
-	}
-}
-
 footer {
-	margin-top: 2rem;
-	background: $aqua;
-	.wrapper 	{
-		display: flex;
-		justify-content: center;
-		align-content: center;
-		align-items: center;
+	background: $purple;
+	.wrapper {
+		// display: flex;
+		// justify-content: center;
+		// align-content: center;
+		// align-items: center;
 		padding: 1rem;
 		p {
-			width: 45%;
+			width: 100%;
 			padding: 1rem;
 			margin: 0;
-			display: inline-block;
+			// display: inline-block;
 		}
 	}
 }

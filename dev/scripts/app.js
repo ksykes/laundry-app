@@ -34,13 +34,8 @@ class App extends React.Component {
 						<a href='/' className='homeLink'>
 							<img className='logo' src='./assets/washer.svg' alt='drawing of a front-loading washing machine' />
 							<h1>The Laundry Mentor</h1>
+							<h3>Helping you get your laundry done one icon at a time.</h3>
 						</a>
-						<nav>
-							<div className='wrapper'>
-								<Link to='/tips'>Laundry Step-by-Step</Link>
-								<Link to='/problems'>Common Laundry Problems</Link>
-							</div>
-						</nav>
 					</header>
 
 					<div className='wrapper'>
@@ -55,6 +50,15 @@ class App extends React.Component {
 						<Route exact path='/' component={Gallery} />
 					</div>
 
+					<nav>
+						<div className='wrapper'>
+							<p>Need some extra help with your laundry?</p>
+							<div className='links'>
+								<Link to='/tips'>📝  Laundry Step-by-Step</Link>
+								<Link to='/problems'>😱  Common Laundry Problems</Link>
+							</div>
+						</div>
+					</nav>
 					<Footer />
 				</div>
 			</Router>
@@ -70,8 +74,8 @@ class Gallery extends React.Component {
 			clickedIconDescription: null,
 			clickedIconCategory: null,
 			iconArray: [],
-			geolocationLat: 43.648458,
-			geolocationLng: -79.397816,
+			geolocationLat: 43.655662,
+			geolocationLng: -79.400273,
 			data: [],
 			loaderOn: false
 		}
@@ -110,7 +114,7 @@ class Gallery extends React.Component {
 				confirmButtonText: 'OK',
 				allowEscapeKey: true,
 				allowOutsideClick: true,
-				confirmButtonColor: '#e71d36'
+				confirmButtonColor: '#82D4BB'
 			});
 		});
 	}
@@ -141,6 +145,8 @@ class Gallery extends React.Component {
 				// exporting data to map.js
 				this.setState({
 					data: nearbyLaundry,
+					geolocationLat: nearbyLaundry[0].geometry.location.lat,
+					geolocationLng: nearbyLaundry[0].geometry.location.lng,
 					loaderOn: !this.state.loaderOn
 				});
 				// // add displayNone class to button
@@ -175,7 +181,6 @@ class Gallery extends React.Component {
 		}
 		return (
 			<div className='gallery'>
-				<h3>Click on an icon below to decipher your clothing's laundry tag.</h3>
 				{/* MixItUp filter buttons */}
 				<div className='filterButtons'>
 					<h4>Filter:</h4>
@@ -186,6 +191,7 @@ class Gallery extends React.Component {
 					<button type="button" data-filter=".ironing">Ironing</button>
 					<button type="button" data-filter=".professional">Dry Cleaning</button>
 				</div>
+				<h4>Click on an icon below to decipher your clothing's laundry tag.</h4>
 				{/* display gallery images */}
 				<div id="gallery">
 					{this.state.iconArray.map((icon) => {
@@ -209,6 +215,7 @@ class LaundryFAQ extends React.Component {
 	render() {
 		return (
 			<div>
+				<a href='/' className='backLinks'>← Back</a>
 				<h1>Most Common Laundry Problems</h1>
 				<h3>Need more help? Check out some answers to the most common laundry problems.</h3>
 				<div className='troubleshooting'>
@@ -230,6 +237,7 @@ class LaundrySteps extends React.Component {
 	render() {
 		return (
 			<div className='laundrySteps'>
+				<a href='/' className='backLinks'>← Back</a>
 				<h1>Laundry Step-by-Step</h1>
 				<h3>If you're new to doing your own laundry, here's a step-by-step process.</h3>
 				<div className='steps'>
@@ -277,7 +285,7 @@ class Footer extends React.Component {
 			<footer>
 				<div className='wrapper'>
 					<p>Thanks to <a href='http://lifehacker.com/does-it-matter-what-laundry-detergent-i-use-1121827834'>Lifehacker</a>, <a href='http://www.whowhatwear.com/are-you-doing-laundry-right-weve-got-the-dos-and-donts/'>Who What Wear</a>, <a href='http://www.artofmanliness.com/2012/08/02/heading-out-on-your-own-day-2-how-to-do-laundry/'>The Art of Manliness</a>, and my mama for the laundry advice.</p>
-					<p>Developed and designed by <a href='http://kaitsykes.com'>Kait Sykes</a>. Copyright © 2017. All Rights Reserved.</p>
+					<p>Developed and designed by <a href='http://kaitsykes.com'>Kait Sykes</a>. Copyright © 2017. All rights reserved.</p>
 				</div>
 			</footer>
 		)

@@ -1,13 +1,18 @@
 .gallery {
 	text-align: center;
+	border: 2px solid $purple;
+	// background-color: rgba(147, 118, 138, 0.4);
 	.filterButtons {
 		margin: 0 auto;
 		display: inline-block;
 		text-align: center;
-		padding-bottom: 1rem;
+		// padding-bottom: 1rem;
 		button {
 			margin: 0.25rem;
 			padding: 0.5rem;
+			border: 2px dotted $aqua;
+			background: none;
+			color: $purple;
 		}
 	}
 }
@@ -19,8 +24,8 @@
 	align-content: space-between;
 	.galleryItem {
 		max-width: 150px;
-		border: 3px solid $red;
-		background-color: $white;
+		border: 2px solid $purple;
+		background-color: white;
 		margin: 0.5rem;
 		padding: 0.25rem;
 		&:hover {

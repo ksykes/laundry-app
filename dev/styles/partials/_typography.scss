@@ -1,69 +1,87 @@
 a {
-	color: $red;
+	color: $purple;
 	text-decoration: none;
 	&:hover {
-		color: $white;
+		color: black;
 	}
 }
 
 h1 {
-	color: $white;
-	font-family: 'Short Stack', sans-serif;
+	color: black;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 900;
 	text-align: center;
 	text-transform: uppercase;
-	font-size: 2rem;
+	font-size: 3rem;
 }
 
 h3 {
-	color: $white;
-	font-family: 'Didact Gothic', sans-serif;
+	color: black;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
 	text-align: center;
 	font-size: 1.5rem;
 }
 
+.homeLink h3 {
+	font-style: italic;
+	margin-top: 0;
+}
+
 h4 {
-	color: $red;
-	font-family: 'Didact Gothic', sans-serif;
+	color: $purple;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
 	font-size: 1.25rem;
 	text-transform: uppercase;
 }
 
 .gallery h4 {
 	display: inline-block;
-	color: $white;
+	color: black;
 }
 
-nav a {
-	font-family: 'Didact Gothic', sans-serif;
+nav .wrapper p, nav a {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
 	font-size: 1.25rem;
-	text-transform: uppercase;
 	text-decoration: none;
-	display: inline;
 	text-align: center;
 }
 
 button {
 	font-size: 1.25rem;
 	text-transform: uppercase;
-	font-family: 'Short Stack', sans-serif;
+	font-family: 'Josefin Sans', sans-serif;
+	padding-top: 0.5rem;
+	color: #ffffff;
 }
 
 .laundrySteps ol {
-	color: $white;
-	font-family: 'Didact Gothic', sans-serif;
+	color: black;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
 	font-size: 1rem;
 }
 
 footer {
-	color: $white;
-	font-family: 'Didact Gothic', sans-serif;
+	color: black;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
 	text-align: center;
 	font-size: 1rem;
+	a {
+		color: white;
+		&:hover {
+			color: black;
+		}
+	}
 }
 
 p, .laundrySteps li {
-	color: $white;
-	font-family: 'Didact Gothic', sans-serif;
+	color: black;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
 	font-size: 1.25rem;
 	line-height: 1.5rem;
 }
