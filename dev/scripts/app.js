@@ -212,9 +212,12 @@ class Gallery extends React.Component {
 }
 
 class LaundryFAQ extends React.Component {
+	componentDidMount() {
+		window.scrollTo(0,0);
+	}
 	render() {
 		return (
-			<div>
+			<div className='laundryProblems'>
 				<a href='/' className='backLinks'>← Back</a>
 				<h1>Most Common Laundry Problems</h1>
 				<h3>Need more help? Check out some answers to the most common laundry problems.</h3>
@@ -234,6 +237,9 @@ class LaundryFAQ extends React.Component {
 }
 
 class LaundrySteps extends React.Component {
+	componentDidMount() {
+		window.scrollTo(0,0);
+	}
 	render() {
 		return (
 			<div className='laundrySteps'>

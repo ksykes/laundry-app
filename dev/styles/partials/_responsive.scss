@@ -12,6 +12,17 @@
 	}
 	#geoButton {
 		width: 10rem;
+		font-size: 1rem;
+	}
+	nav .wrapper .links {
+		display: block;
+		a {
+			display: block;
+			width: 100%;
+		}
+	}
+	.laundrySteps h1, .laundryProblems h1 {
+		font-size: 2rem;
 	}
 	footer .wrapper {
 		display: block;
