@@ -33,7 +33,7 @@ class App extends React.Component {
 					<header>
 						<a href='/' className='homeLink'>
 							<img className='logo' src='./assets/washer.svg' alt='drawing of a front-loading washing machine' />
-							<h1>The Laundry Mentor</h1>
+							<h1>Laundry Lessons</h1>
 							<h3>Helping you get your laundry done one icon at a time.</h3>
 						</a>
 					</header>
@@ -191,7 +191,7 @@ class Gallery extends React.Component {
 					<button type="button" data-filter=".ironing">Ironing</button>
 					<button type="button" data-filter=".professional">Dry Cleaning</button>
 				</div>
-				<h4>Click on an icon below to decipher your clothing's laundry tag.</h4>
+				<h4>Click on an icon below to decipher your clothing’s laundry tag.</h4>
 				{/* display gallery images */}
 				<div id="gallery">
 					{this.state.iconArray.map((icon) => {
@@ -222,14 +222,14 @@ class LaundryFAQ extends React.Component {
 				<h1>Most Common Laundry Problems</h1>
 				<h3>Need more help? Check out some answers to the most common laundry problems.</h3>
 				<div className='troubleshooting'>
-					<h4>You notice detergent residue (white streaks) on clothes.</h4>
-					<p>Your powdered detergent isn’t dissolving properly. Make sure the loads aren’t too full. If you are overstuffing the washer, your clothes don’t get clean, and the detergent won’t get washed away. Use liquid detergent with cold-water cycles. Try letting the washer fill with water, adding the detergent, and then adding the clothes. If the problem is caused by hard water, try using a water-softening product in the next load. To remove hard-water residue from clothes, soak them in a solution of 1 cup white vinegar per 1 gallon warm water. Rinse and rewash. You may also need to clean your washer: </p>
-					<h4>You have a problem with pilling.</h4>
-					<p>This is most common among synthetic fabrics. Try turning synthetic clothing inside out before washing. (Pilling is caused by abrasion of fibers, and this cuts down on abrasion during the wash and dry cycles.) You can also wash your synthetics together in a gentler, shorter cycle. Using a liquid detergent will help. To remove pills, snip them off with a battery-powered pill remover (available at sewing stores and discount retailers) or pull the fabric tight over a curved surface and carefully shave the pills off with a safety razor.</p>
-					<h4>There’s a lot of lint on your clothes.</h4>
-					<p>You probably need to sort better. Separate lint producers, such as fleece sweat suits, chenille items, new terry cloth towels, and flannel pajamas, from lint attractors, such as corduroys, synthetic blends, and dark fabric. To remove the lint, use a lint roller or pat with the sticky side of masking or packing tape. Check to make sure pockets are empty of tissues and other paper before you wash. Make sure the washer and dryer lint filters are clean.</p>
+					<h4>There’s detergent residue (white streaks) on your clothes.</h4>
+					<p>Your detergent isn’t dissolving properly. Make sure the loads aren’t too full; if you’re overstuffing the washer, your clothes don’t get clean and the detergent won’t get washed away. You might also try letting the washer fill with water, adding the detergent, and then adding the clothes. The problem may be caused by hard water, and that can be remedied with a water-softening product in the next load. To remove hard-water residue from clothes, soak them in a solution of 1 cup white vinegar per 1 gallon warm water. Rinse and rewash. You may also need to clean your washer: try running it with vinegar to wash the interior.</p>
+					<h4>Your clothes are pilling.</h4>
+					<p>This is most common with synthetic fabrics. Turn this clothing inside out before washing. You can also wash your synthetics together in a gentler, shorter cycle. To remove pills, snip them off with a battery-powered pill remover or pull the fabric tight over a curved surface and carefully shave the pills off with a safety razor.</p>
+					<h4>There’s lint all over your clothes.</h4>
+					<p>You probably need to sort better. Separate lint producers, such as fleece, sweats, chenille, terry cloth towels, and flannel, from lint attractors, such as corduroys, synthetics, and dark fabric. To remove the lint, use a lint roller or pat with the sticky side of masking or packing tape. Check to make sure pockets are empty of tissues and other paper before you wash, and make sure the washer and dryer lint filters are clean.</p>
 					<h4>You have sweat stains on your white T-shirts.</h4>
-					<p>Many antiperspirants contain aluminum chloride, which reacts with sweat and discolours light fabrics. None are foolproof, but there are a few ways to get rid of these unsightly yellow stains. Turn the shirt inside out and rinse in cold water. For old stains, sponge with white vinegar, let it set for at least thirty minutes, and launder in the hottest water recommended for the fabric. Don't use the dryer, which will set the stain. For new stains, try rubbing with ammonia (1 tablespoon to 1/2 cup water) before washing. If that doesn't work, try Clorox—but not together with ammonia, unless you want to pass out on your laundry room floor.</p>
+					<p>Many antiperspirants contain aluminum chloride, which reacts with sweat and discolours light fabrics. There are a few things you can try to get rid of these stains. Turn the shirt inside out and rinse in cold water. For old stains, sponge with white vinegar, let  set for at least thirty minutes, and launder in the hottest water recommended for the fabric. Don't use the dryer, which will set the stain. For new stains, try rubbing with ammonia (1 tablespoon to 1/2 cup water) before washing. If that doesn’t work, try Clorox—but not together with ammonia!</p>
 				</div>
 			</div>
 		)
@@ -245,7 +245,7 @@ class LaundrySteps extends React.Component {
 			<div className='laundrySteps'>
 				<a href='/' className='backLinks'>← Back</a>
 				<h1>Laundry Step-by-Step</h1>
-				<h3>If you're new to doing your own laundry, here's a step-by-step process.</h3>
+				<h3>If you’re new to doing your own laundry, here’s a step-by-step process.</h3>
 				<div className='steps'>
 					<ol>
 						<li>Check your clothing’s tags to make sure you separate out the ones that need special care.</li>
