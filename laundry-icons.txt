@@ -1,0 +1,50 @@
+Bleaching1 - Use any bleach when needed.
+Bleaching2 - Use only non-chlorine bleach when needed.
+Bleaching3 - Do not bleach.
+
+Drying1 - Tumble dry at high heat (not exceeding 75°C) at normal setting.
+Drying2 - Tumble dry at medium heat (not exceeding 65°C) at normal setting.
+Drying3 - Tumble dry at medium heat (not exceeding 65°C) at permanent press setting.
+Drying4 - Tumble dry at low heat (not exceeding 55°C) at permanent press setting.
+Drying5 - Tumble dry at a low heat (not exceeding 55°C) at delicate cycle.
+Drying6 - Tumble dry any heat.
+Drying7 - Tumble dry no heat/air dry.
+Drying8 - Do not tumble dry.
+Drying9 - After extraction of excess water, line dry/hang to dry.
+Drying10 - Hang up the soaking wet article to “drip” dry.
+Drying11 - After extraction of excess water, dry the article on a suitable flat surface.
+Drying12 - Dry in the shade (symbol added to line dry, drip dry, or dry flat).
+Drying13 - Do not dry.
+Drying14 - Do not wring.
+
+Ironing1 - Iron with or without steam by hand, or press on commercial equipment, at a high temperature (not exceeding 200°C). Recommended temperature for cotton and linen textiles.
+Ironing2 - Iron with or without steam by hand, or press on commercial equipment, at a medium temperature (not exceeding 150°C). Recommended temperature for polyester, rayon, silk, triacetate and wool textiles.
+Ironing3 - Iron with or without steam by hand, or press on commercial equipment, at a low temperature (not exceeding 110°C). Recommended temperature for acetate, acrylic, modacrylic, nylon, polypropylene and spandex textiles.
+Ironing4 - Do not steam.
+Ironing5 - Do not iron or press.
+
+Professional1 - Dry-clean, normal cycle. Any solvent except trichloroethylene.
+Professional2 - Dry-clean, normal cycle. Petroleum solvent only.
+Professional3 - Do not dry-clean.
+Professional4 - Wet-clean.
+
+Washing1 - Wash in domestic or commercial machine at any temperature, at normal setting.
+Washing4 - Wash in commercial machine in water not exceeding 95°C, at normal setting.
+Washing5 - Wash in commercial machine in water not exceeding 95°C, at permanent press setting.
+Washing6 - Wash in domestic or commercial machine in water not exceeding 70°C, at normal setting.
+Washing7 - Wash in domestic or commercial machine in water not exceeding 60°C, at normal setting.
+Washing8 - Wash in domestic or commercial machine in water not exceeding 60°C, at permanent press setting.
+Washing9 - Wash in domestic or commercial machine in water not exceeding 50°C, at normal setting.
+Washing10 - Wash in domestic or commercial machine in water not exceeding 50°C, at permanent press setting.
+Washing11 - Wash in domestic or commercial machine in water not exceeding 50°C, at delicate/gentle setting.
+Washing12 - Wash in domestic or commercial machine in water not exceeding 40°C, at normal setting.
+Washing13 - Wash in domestic or commercial machine in water not exceeding 40°C, at permanent press setting.
+Washing14 - Wash in domestic or commercial machine in water not exceeding 40°C, at delicate/gentle setting.
+Washing15 - Wash in domestic or commercial machine in water not exceeding 30°C, at normal setting.
+Washing16 - Wash in domestic or commercial machine in water not exceeding 30°C, at permanent press setting.
+Washing17 - Wash in domestic or commercial machine in water not exceeding 30°C, at delicate/gentle setting.
+Washing18 - Wash gently by hand in water not exceeding 40°C.
+Washing19 - Wash gently by hand in water not exceeding 30°C.
+Washing20 - Do not wash.
+
+https://www.ic.gc.ca/eic/site/oca-bc.nsf/eng/ca02009.html

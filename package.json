@@ -1,31 +1,42 @@
 {
-  "name": "react-boilerplate",
+  "name": "Laundry Lessons",
   "version": "1.0.0",
-  "description": "",
+  "description": "laundry helper website",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksykes/laundry-app.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ksykes/laundry-app/issues"
+  },
+  "homepage": "https://github.com/ksykes/laundry-app#readme",
   "devDependencies": {
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-react": "^6.16.0",
-    "babelify": "^7.3.0",
-    "browser-sync": "^2.18.6",
-    "browserify": "^13.3.0",
-    "connect-history-api-fallback": "^1.3.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browser-sync": "^2.23.6",
+    "browserify": "^16.1.0",
     "google-map-react": "^0.24.0",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-babel": "^7.0.0",
     "gulp-concat": "^2.6.1",
-    "gulp-notify": "^2.2.0",
-    "gulp-plumber": "^1.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
     "gulp-sass": "^3.1.0",
-    "jquery": "^3.1.1",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-router-dom": "^4.1.1",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "jquery": "^3.3.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   }
 }

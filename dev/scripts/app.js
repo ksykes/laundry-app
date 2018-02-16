@@ -9,12 +9,12 @@ import Map from './map.js';
 
 // Initialize Firebase
 var config = {
-	apiKey: "AIzaSyD8aeD_g3ZGbgqnBz4rLl3nMN3fZSa9Sys",
-	authDomain: "laundry-app-10f78.firebaseapp.com",
-	databaseURL: "https://laundry-app-10f78.firebaseio.com",
-	projectId: "laundry-app-10f78",
-	storageBucket: "laundry-app-10f78.appspot.com",
-	messagingSenderId: "535061224744"
+  apiKey: "AIzaSyC58lTYOdFtMIdqQJ0Mz_ST-Wpd31GUS3s",
+  authDomain: "laundry-lessons.firebaseapp.com",
+  databaseURL: "https://laundry-lessons.firebaseio.com",
+  projectId: "laundry-lessons",
+  storageBucket: "laundry-lessons.appspot.com",
+  messagingSenderId: "380320501075"
 };
 firebase.initializeApp(config);
 
@@ -23,15 +23,15 @@ const dbRef = firebase.database().ref('/');
 var laundryIcons = {};
 var nearbyLaundry = [];
 
-const googleMapsKey = 'AIzaSyDcyjwPm5OjBxyMNY9W3UJkJCpmfOMGJk0';
+const googleMapsKey = "AIzaSyBbVM4jItRq01mD2j2LxR0VJapThMQIwcM";
 
 class App extends React.Component {
 	render() {
 		return (
-			<Router>
+			<Router basename="/laundry-lessons">
 				<div>
 					<header>
-						<a href='/' className='homeLink'>
+						<a href='/laundry-lessons' className='homeLink'>
 							<img className='logo' src='./assets/washer.svg' alt='drawing of a front-loading washing machine' />
 							<h1>Laundry Lessons</h1>
 							<h3>Helping you get your laundry done one icon at a time.</h3>
@@ -218,7 +218,7 @@ class LaundryFAQ extends React.Component {
 	render() {
 		return (
 			<div className='laundryProblems'>
-				<a href='/' className='backLinks'>← Back</a>
+				{/* <a href='/' className='backLinks'>← Back</a> */}
 				<h1>Most Common Laundry Problems</h1>
 				<h3>Need more help? Check out some answers to the most common laundry problems.</h3>
 				<div className='troubleshooting'>
@@ -243,7 +243,7 @@ class LaundrySteps extends React.Component {
 	render() {
 		return (
 			<div className='laundrySteps'>
-				<a href='/' className='backLinks'>← Back</a>
+				{/* <a href='/' className='backLinks'>← Back</a> */}
 				<h1>Laundry Step-by-Step</h1>
 				<h3>If you’re new to doing your own laundry, here’s a step-by-step process.</h3>
 				<div className='steps'>
@@ -291,7 +291,7 @@ class Footer extends React.Component {
 			<footer>
 				<div className='wrapper'>
 					<p>Thanks to <a href='http://lifehacker.com/does-it-matter-what-laundry-detergent-i-use-1121827834'>Lifehacker</a>, <a href='http://www.whowhatwear.com/are-you-doing-laundry-right-weve-got-the-dos-and-donts/'>Who What Wear</a>, <a href='http://www.artofmanliness.com/2012/08/02/heading-out-on-your-own-day-2-how-to-do-laundry/'>The Art of Manliness</a>, and my mama for the laundry advice.</p>
-					<p>Developed and designed by <a href='http://kaitsykes.com'>Kait Sykes</a>. Copyright © 2017. All rights reserved.</p>
+					<p>Developed and designed by <a href='http://kaitsykes.com'>Kait Sykes</a>. Copyright © 2018. All rights reserved.</p>
 				</div>
 			</footer>
 		)

@@ -26,7 +26,7 @@ export default class SimpleMap extends Component {
 				center={{lat:latitude,lng:longitude}}
 				defaultZoom={this.state.currentZoom}
 				bootstrapURLKeys={{
-					key: 'AIzaSyDcyjwPm5OjBxyMNY9W3UJkJCpmfOMGJk0'
+					key: 'AIzaSyBbVM4jItRq01mD2j2LxR0VJapThMQIwcM'
 				}}>
 					{data.map((laundromatData) => {
 						return (

@@ -9,7 +9,6 @@ const notify = require('gulp-notify');
 const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
 const concat = require('gulp-concat');
-const historyApiFallback = require('connect-history-api-fallback');
 
 gulp.task('styles', () => {
 	return gulp.src('./dev/styles/**/*.scss')
@@ -19,33 +18,32 @@ gulp.task('styles', () => {
 });
 
 gulp.task('js', () => {
-	return browserify('dev/scripts/app.js', {debug: true})
+	browserify('dev/scripts/app.js', { debug: true })
 		.transform('babelify', {
 			sourceMaps: true,
-			presets: ['es2015','react']
+			presets: ['es2015', 'react']
 		})
 		.bundle()
-		.on('error',notify.onError({
+		.on('error', notify.onError({
 			message: "Error: <%= error.message %>",
 			title: 'Error in JS 💀'
 		}))
 		.pipe(source('app.js'))
 		.pipe(buffer())
 		.pipe(gulp.dest('public/scripts'))
-		.pipe(reload({stream:true}));
+		.pipe(reload({ stream: true }));
 });
 
 gulp.task('bs', () => {
 	browserSync.init({
 		server: {
 			baseDir: './'
-		},
-		middleware: [historyApiFallback()]
+		}
 	});
 });
 
-gulp.task('default', ['bs','js','styles'], () => {
-	gulp.watch('dev/**/*.js',['js']);
-	gulp.watch('dev/**/*.scss',['styles']);
-	gulp.watch('./public/styles/style.css',reload);
+gulp.task('default', ['js', 'bs', 'styles'], () => {
+	gulp.watch('dev/**/*.js', ['js']);
+	gulp.watch('dev/**/*.scss', ['styles']);
+	gulp.watch('./public/styles/style.css', reload);
 });
