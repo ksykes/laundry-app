@@ -28,10 +28,10 @@ const googleMapsKey = "AIzaSyBbVM4jItRq01mD2j2LxR0VJapThMQIwcM";
 class App extends React.Component {
 	render() {
 		return (
-			<Router basename="/laundry-lessons">
+			<Router basename="/">
 				<div>
 					<header>
-						<a href='/laundry-lessons' className='homeLink'>
+						<a href='/' className='homeLink'>
 							<img className='logo' src='./assets/washer.svg' alt='drawing of a front-loading washing machine' />
 							<h1>Laundry Lessons</h1>
 							<h3>Helping you get your laundry done one icon at a time.</h3>
@@ -290,7 +290,7 @@ class Footer extends React.Component {
 		return (
 			<footer>
 				<div className='wrapper'>
-					<p>Thanks to <a href='http://lifehacker.com/does-it-matter-what-laundry-detergent-i-use-1121827834'>Lifehacker</a>, <a href='http://www.whowhatwear.com/are-you-doing-laundry-right-weve-got-the-dos-and-donts/'>Who What Wear</a>, <a href='http://www.artofmanliness.com/2012/08/02/heading-out-on-your-own-day-2-how-to-do-laundry/'>The Art of Manliness</a>, and my mama for the laundry advice.</p>
+					<p>Thanks to <a href='http://lifehacker.com/does-it-matter-what-laundry-detergent-i-use-1121827834'>Lifehacker</a>, <a href='http://www.whowhatwear.com/are-you-doing-laundry-right-weve-got-the-dos-and-donts/'>Who What Wear</a>, <a href='http://www.artofmanliness.com/2012/08/02/heading-out-on-your-own-day-2-how-to-do-laundry/'>The Art of Manliness</a>, and my mom for the laundry advice.</p>
 					<p>Developed and designed by <a href='http://kaitsykes.com'>Kait Sykes</a>. Copyright © 2018. All rights reserved.</p>
 				</div>
 			</footer>
